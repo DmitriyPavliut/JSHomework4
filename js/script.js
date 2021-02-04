@@ -1,3 +1,4 @@
+/*
 //Задание 1
 document.write("Задание 1</br>");
 let mass1 = [1, 2, 3, 4, 5];
@@ -134,10 +135,10 @@ while (index8 < mass8.length) {
 document.write("</br></br>Задание 9</br>");
 
 let mass9 = [5, 9, 21, , , 9, 78, , , , 6],
-    num9=0;
+    num9 = 0;
 
-for(let elem9 of mass9){
-    if(elem9==undefined) num9++;
+for (let elem9 of mass9) {
+    if (elem9 == undefined) num9++;
 }
 
 document.write(`Количество пустных элементов массива: ${num9}</br>`);
@@ -145,3 +146,66 @@ document.write(`Количество пустных элементов масс�
 
 //Задание 10
 document.write("</br></br>Задание 10</br>");
+
+let mass10 = [48, 9, 0, 4, 21, 2, 1, 0, 8, 84, 76, 8, 4, 13, 2],
+    /!*mass10 = [1, 8, 0, 13, 76, 8, 7, 0, 22, 0, 2, 3, 2],*!/   // второй массив добавен для возможности переключить его
+    indexFirst = mass10.indexOf(0),
+    indexEnd = mass10.lastIndexOf(0),
+    indexStart = indexFirst + 1,
+    result10 = 0;
+
+if (indexFirst != -1 || indexEnd != -1) {
+    for (; indexStart < indexEnd; indexStart++) {
+        result10 += mass10[indexStart];
+    }
+}
+
+document.write(`Дан массив: ${mass10}</br>`);
+document.write(`Cуммa элементов массива между двумя нулями(первым и последним нулями в массиве): ${result10}</br>`);
+
+*/
+
+//Задание 11
+document.write("</br></br>Задание 11</br></br>");
+
+let height = prompt("Введите высоту треугольника (целое число)(задание 11)"),
+    mass11 = [],
+    mass11Item = [],
+    massIndex = [],
+    index = 1;
+
+while (!height.trim() || !Number.isInteger(Number(height)) || Number(height) < 1) {
+    height = prompt("Ошибка! Введите высоту треугольника(задание 11)");
+}
+
+massIndex.push(Number(height));
+
+let startMilliseconds = new Date().getMilliseconds();
+
+for (let i = 0; i < height; i++) {
+    for (let numindex of massIndex) {
+        mass11Item[numindex] = "^";
+    }
+    massIndex.push(Number(height) - index);
+    massIndex.push(Number(height) + index);
+    mass11[i] = mass11Item;
+    mass11Item = [];
+    index++;
+}
+
+let finalSeconds = new Date().getMilliseconds();
+/*console.log(`calculated time msec ${finalSeconds-startMilliseconds}`);*/
+
+for (let num11 of mass11) {
+    for (let num11Item of num11) {
+        if (num11Item == undefined) {
+            document.write(`<font color="white">^</font>`);
+        } else {
+            document.write(num11Item);
+        }
+    }
+    document.write("</br>");
+}
+
+let drawSeconds = new Date().getMilliseconds();
+console.log(`draw time msec ${Math.abs(drawSeconds)-finalSeconds}`);

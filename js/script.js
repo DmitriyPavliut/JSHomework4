@@ -6,6 +6,7 @@ for (let num1 of mass1) {
     document.write(`${num1}  `);
 }
 
+
 //Задание 2
 document.write("</br></br>Задание 2</br>");
 let mass2 = [-2, -1, -3, 15, 0, -4, 2, -5, 9, -15, 0, 4, 5, -6, 10, 7];
@@ -13,6 +14,7 @@ let mass2 = [-2, -1, -3, 15, 0, -4, 2, -5, 9, -15, 0, 4, 5, -6, 10, 7];
 for (let num2 of mass2) {
     if (num2 > -10 && num2 < -3) document.write(`${num2}  `);
 }
+
 
 //Задание 3
 document.write("</br></br>Задание 3</br>");
@@ -77,5 +79,69 @@ for (let num5 of mass5) {
     }
 }
 
+
 //Задание 6
 document.write("</br></br>Задание 6</br>");
+let mass6 = ['ПН', 'ВТ', '20', '30', '50', -4, 2, -5, 9];
+
+mass6.push('добавленный элемент');
+
+document.write(`${mass6[mass6.length - 1]}  `);
+
+
+//Задание 7
+document.write("</br></br>Задание 7</br>");
+
+let variable7,
+    mass7 = [],
+    m = 0;
+
+do {
+    variable7 = prompt("Введите число(Задание 8). Для окончания ввода введите пустую строку.");
+
+    if (!Number(variable7) && variable7.trim()) {
+        alert("Вы ввели не число!");
+    } else if (variable7.trim()) {
+        mass7[m] = variable7;
+        m++;
+    }
+}
+while (variable7.trim());
+
+document.write(`Введенный массив чисел: ${mass7}</br>`);
+
+mass7.sort(function (a, b) {
+    return a - b;
+});
+document.write(`Отсортированный массив введенных чисел по-возрастанию: ${mass7}</br>`);
+
+
+//Задание 8
+document.write("</br></br>Задание 8</br>");
+
+let mass8 = [12, false, 'Текст', 4, 2, -5, 0],
+    index8 = 0;
+
+mass8.reverse();
+
+document.write(`Выводим элементы массива в обратном порядке через цикл while:</br>`);
+while (index8 < mass8.length) {
+    document.write(`${mass8[index8]} `);
+    index8++
+}
+
+//Задание 9
+document.write("</br></br>Задание 9</br>");
+
+let mass9 = [5, 9, 21, , , 9, 78, , , , 6],
+    num9=0;
+
+for(let elem9 of mass9){
+    if(elem9==undefined) num9++;
+}
+
+document.write(`Количество пустных элементов массива: ${num9}</br>`);
+
+
+//Задание 10
+document.write("</br></br>Задание 10</br>");

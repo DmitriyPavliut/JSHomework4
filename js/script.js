@@ -21,13 +21,10 @@ document.write("</br></br>Задание 3</br>");
 let mass3 = [],
     mass3_ = [],
     startNum = 23,
-    i = 0,
-    k = 0,
     result = 0;
 
 while (startNum <= 57) {
-    mass3[i] = startNum;
-    i++;
+    mass3.push(startNum);
     startNum++;
 }
 
@@ -36,8 +33,7 @@ document.write(mass3);
 
 
 for (let l = 23; l <= 57; l++) {
-    mass3_[k] = l;
-    k++;
+    mass3_.push(l);
 }
 
 document.write("</br>Через for</br>");
@@ -93,8 +89,7 @@ document.write(`${mass6[mass6.length - 1]}  `);
 document.write("</br></br>Задание 7</br>");
 
 let variable7,
-    mass7 = [],
-    m = 0;
+    mass7 = [];
 
 do {
     variable7 = prompt("Введите число(Задание 8). Для окончания ввода введите пустую строку.");
@@ -102,8 +97,7 @@ do {
     if (!Number(variable7) && variable7.trim()) {
         alert("Вы ввели не число!");
     } else if (variable7.trim()) {
-        mass7[m] = variable7;
-        m++;
+        mass7.push(variable7);
     }
 }
 while (variable7.trim());
@@ -179,8 +173,8 @@ while (!height.trim() || !Number.isInteger(Number(height)) || Number(height) < 1
 massIndex.push(Number(height));
 
 for (let i = 0; i < height; i++) {
-    for (let numindex of massIndex) {
-        mass11Item[numindex] = "^";
+    for (let numIndex of massIndex) {
+        mass11Item[numIndex] = "^";
     }
     massIndex.push(Number(height) - index);
     massIndex.push(Number(height) + index);

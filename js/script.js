@@ -94,7 +94,7 @@ let variable7,
 do {
     variable7 = prompt("Введите число(Задание 8). Для окончания ввода введите пустую строку.");
 
-    if (!Number(variable7) && variable7.trim()) {
+    if (!Number(variable7) && variable7.trim() && Number(variable7)!==0) {
         alert("Вы ввели не число!");
     } else if (variable7.trim()) {
         mass7.push(variable7);
